@@ -14,18 +14,27 @@ const App = () => {
       <ColorSlider
         baseColor="red"
         colorName="Červená"
+        value={redValue}
+        onValueChange={setRedValue}
       />
       <ColorSlider
         baseColor="green"
         colorName="Zelená"
+        value={greenValue}
+        onValueChange={setGreenValue}
       />
       <ColorSlider
         baseColor="blue"
         colorName="Modná"
+        value={blueValue}
+        onValueChange={setBlueValue}
       />
       <div
         className="color-box"
-        id="color-box"></div>
+        id="color-box"
+        style={{
+          backgroundColor: `rgb(${redValue}, ${greenValue}, ${blueValue})`,
+        }}></div>
     </div>
   );
 };

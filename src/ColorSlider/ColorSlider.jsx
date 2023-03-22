@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import './ColorSlider.css';
 
-export const ColorSlider = ({ baseColor, colorName }) => {
+export const ColorSlider = ({ baseColor, colorName, onValueChange, value }) => {
+  const element = useRef(null);
+  const handleValueChange = () => {
+    onValueChange(element?.current.value);
+  };
   return (
     <div className="sliders">
       <label htmlFor={baseColor}>{colorName}</label>
@@ -11,7 +15,9 @@ export const ColorSlider = ({ baseColor, colorName }) => {
         id={`${baseColor}Slider`}
         min="0"
         max="255"
-        value="0"
+        ref={element}
+        value={value}
+        onChange={handleValueChange}
       />
     </div>
   );
