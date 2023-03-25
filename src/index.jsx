@@ -11,30 +11,32 @@ const App = () => {
   return (
     <div className="color-panel">
       <h1>Mixér barev</h1>
-      <ColorSlider
-        baseColor="red"
-        colorName="Červená"
-        value={redValue}
-        onValueChange={setRedValue}
-      />
-      <ColorSlider
-        baseColor="green"
-        colorName="Zelená"
-        value={greenValue}
-        onValueChange={setGreenValue}
-      />
-      <ColorSlider
-        baseColor="blue"
-        colorName="Modná"
-        value={blueValue}
-        onValueChange={setBlueValue}
-      />
-      <div
-        className="color-box"
-        id="color-box"
-        style={{
-          backgroundColor: `rgb(${redValue}, ${greenValue}, ${blueValue})`,
-        }}></div>
+      <div className="sliders">
+        <ColorSlider
+          baseColor="red"
+          colorName="Červená"
+          value={redValue}
+          onValueChange={setRedValue}
+        />
+        <ColorSlider
+          baseColor="green"
+          colorName="Zelená"
+          value={greenValue}
+          onValueChange={setGreenValue}
+        />
+        <ColorSlider
+          baseColor="blue"
+          colorName="Modná"
+          value={blueValue}
+          onValueChange={setBlueValue}
+        />
+        <div
+          className="color-box"
+          id="color-box"
+          style={{
+            backgroundColor: `rgb(${redValue}, ${greenValue}, ${blueValue})`,
+          }}></div>
+      </div>
     </div>
   );
 };

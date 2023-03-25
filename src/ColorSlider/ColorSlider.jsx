@@ -7,7 +7,7 @@ export const ColorSlider = ({ baseColor, colorName, onValueChange, value }) => {
     onValueChange(element?.current.value);
   };
   return (
-    <div className="sliders">
+    <>
       <label htmlFor={baseColor}>{colorName}</label>
       <input
         type="range"
@@ -19,6 +19,6 @@ export const ColorSlider = ({ baseColor, colorName, onValueChange, value }) => {
         value={value}
         onChange={handleValueChange}
       />
-    </div>
+    </>
   );
 };
